@@ -2,7 +2,7 @@ const PORT = process.env.PORT || 8080;
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
-const cors = require("cors");
+// const cors = require("cors");
 //const cashModel = require("./dbmodels");
 
 //to handle json type api calls
