@@ -9,7 +9,7 @@ const mongoose = require("mongoose");
 app.use(express.json());
 app.use(express.urlencoded());
 const food = ["kabab", "nihari", "daal rice"];
-app.use(cors());
+// app.use(cors());
 const {
   createEntry,
   getAllEntries,
