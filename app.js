@@ -2,14 +2,14 @@ const PORT = process.env.PORT || 8080;
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
-// const cors = require("cors");
+const cors = require("cors");
 //const cashModel = require("./dbmodels");
 
 //to handle json type api calls
 app.use(express.json());
 app.use(express.urlencoded());
 const food = ["kabab", "nihari", "daal rice"];
-// app.use(cors());
+app.use(cors());
 const {
   createEntry,
   getAllEntries,
@@ -41,11 +41,14 @@ mongoose
 //read or fetch requests
 app.get("/api/expense", async (req, res) => {
   let e = await getAllEntries();
+  console.log("Get All", e);
   res.send(e);
 });
 //fetch single product
 app.get("/api/expense/:id", async (req, res) => {
   let e = await getOneEntry(req.params.id);
+  console.log("Get One", e);
+
   res.send(e);
 });
 
